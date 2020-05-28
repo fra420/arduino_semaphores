@@ -21,26 +21,6 @@
 #define WAIT 500
 #define THRESHOLD 5000
 
-typedef struct {
-  int red;
-  int yellow;
-  int green;
-  bool current;
-  bool previous;
-  int elapsedtime;
-} Semaphore;
-
-void setOnSem(Semaphore *sem);
-void setOffSem(Semaphore *sem);
-void alternateSem(Semaphore *semA, Semaphore *semB); // Semaphore *semC, etc...
-
-/* todo BLYNK
-void blynkStats();
-bool blynkButton();
-*/
-
-Semaphore *initSem(int red, int yellow, int green);
-
 void setup() {
  pinMode(redA, OUTPUT);
  pinMode(yellowA, OUTPUT);
@@ -77,7 +57,27 @@ void setup() {
  */
  
  Serial.begin(9600); // initialize serial monitor
-}
+};
+
+typedef struct {
+  int red;
+  int yellow;
+  int green;
+  bool current;
+  bool previous;
+  int elapsedtime;
+} Semaphore;
+
+void setOnSem(Semaphore *sem);
+void setOffSem(Semaphore *sem);
+void alternateSem(Semaphore *semA, Semaphore *semB); // Semaphore *semC, etc...
+
+/* todo BLYNK
+void blynkStats();
+bool blynkButton();
+*/
+
+Semaphore *initSem(int red, int yellow, int green);
 
 Semaphore *semA, *semB; // *semC, etc...
 semA = initSem(redA, yellowA, greenA);
