@@ -79,11 +79,10 @@ bool blynkButton();
 
 Semaphore *initSem(int red, int yellow, int green);
 
-Semaphore *semA, *semB; // *semC, etc...
-semA = initSem(redA, yellowA, greenA);
-semB = initSem(redB, yellowB, greenB);
-// semC = initSem(redC, yellowC, greenC); etc...
-// semPed = initSem(redPed, yellowPed, greenPed);
+Semaphore *semA = initSem(redA, yellowA, greenA);
+Semaphore *semB = initSem(redB, yellowB, greenB);
+// Semaphore *semC = initSem(redC, yellowC, greenC); etc...
+// Semaphore *semPed = initSem(redPed, yellowPed, greenPed);
 
 void loop() {
   /* PEDESTRIANS
