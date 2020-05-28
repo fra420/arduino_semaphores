@@ -76,14 +76,14 @@ void setup() {
  initial red for the other semaphores goes here
  */
  
- Semaphore *semA, *semB; // *semC, etc...
- semA = initSem(redA, yellowA, greenA);
- semB = initSem(redB, yellowB, greenB);
- // semC = initSem(redC, yellowC, greenC); etc...
- // semPed = initSem(redPed, yellowPed, greenPed);
- 
  Serial.begin(9600); // initialize serial monitor
 }
+
+Semaphore *semA, *semB; // *semC, etc...
+semA = initSem(redA, yellowA, greenA);
+semB = initSem(redB, yellowB, greenB);
+// semC = initSem(redC, yellowC, greenC); etc...
+// semPed = initSem(redPed, yellowPed, greenPed);
 
 void loop() {
   /* PEDESTRIANS
